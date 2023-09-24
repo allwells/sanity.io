@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const baseStyles: string =
-  "bg-white text-black selection:bg-neutral-200 dark:bg-neutral-900 dark:text-white dark:selection:bg-neutral-700 min-h-fit overflow-auto";
+  "bg-white text-black selection:bg-neutral-200 dark:bg-neutral-900 dark:text-white dark:selection:bg-neutral-700 overflow-y-auto px-[4%]";
 
 export default function RootLayout({
   children,
@@ -31,12 +31,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={className}>
         <ThemeProviders>
-          <SmoothScroll>
-            <Header />
-            <TransitionLayout>
-              <div className="w-full max-w-5xl mx-auto px-[4%]">{children}</div>
-            </TransitionLayout>
-          </SmoothScroll>
+          {/* <SmoothScroll> */}
+          <Header />
+          {/* <TransitionLayout> */}
+          <div className="w-full max-w-4xl mx-auto">{children}</div>
+          {/* </TransitionLayout> */}
+          {/* </SmoothScroll> */}
         </ThemeProviders>
       </body>
     </html>
