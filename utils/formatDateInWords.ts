@@ -27,15 +27,18 @@ export function formatDateInWords(inputDate: Date): string {
   const inputDateObj: Date = new Date(inputDate);
 
   // Calculate the time difference in milliseconds
-  const timeDifference = currentDate - inputDateObj;
+  const timeDifference: number = currentDate.getTime() - inputDateObj.getTime();
 
   // Define time intervals in milliseconds
-  const minute = 60 * 1000;
-  const hour = 60 * minute;
-  const day = 24 * hour;
-  const week = 7 * day;
-  const month = 30 * day;
-  const year = 365 * day;
+  const minute: number = 60 * 1000;
+  const hour: number = 60 * minute;
+  const day: number = 24 * hour;
+  const week: number = 7 * day;
+  const month: number = 30 * day;
+  const year: number = 365 * day;
+
+  // Function to add 's' if the count is greater than 1
+  const check = (count: number): string => (count > 1 ? "s" : "");
 
   // Determine the appropriate time unit and format the output
   if (timeDifference < minute) {
@@ -67,8 +70,4 @@ export function formatDateInWords(inputDate: Date): string {
       Math.floor(timeDifference / year)
     )} ago`;
   }
-}
-
-function check(value: number): string {
-  return value > 1 ? "s" : "";
 }
