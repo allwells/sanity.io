@@ -1,0 +1,12 @@
+/* .content {
+  opacity: 0;
+  transition: .5s;
+} */
+
+.fadeIn {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+}
